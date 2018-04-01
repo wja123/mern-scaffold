@@ -13,7 +13,7 @@ const MONGO_URI = process.env.MONGO_URI || 'mongodb://localhost/merrntodo';
 
 var app = express()
 
-app.use(express.static('./dist'));
+app.use(express.static('./public'));
 
 app.use(morgan('dev'))
 app.use(bodyParser.urlencoded({ extended: false }));
@@ -22,7 +22,7 @@ app.use(cookieParser())
 
 
 app.get('/', (req, res) => {
-  res.sendFile(path.resolve(__dirname, 'dist/index.html'));
+  res.sendFile(path.resolve(__dirname, 'public/index.html'));
 })
 
 var server = http.createServer(app)
