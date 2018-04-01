@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom'
 
 const Root = () => (
   <div>
-    <h1>Test</h1>
+    <h1>MERN Scaffold</h1>
   </div>
 )
 

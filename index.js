@@ -20,20 +20,18 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 app.use(cookieParser())
 
-
 app.get('/', (req, res) => {
   res.sendFile(path.resolve(__dirname, 'public/index.html'));
 })
 
-var server = http.createServer(app)
 
-mongoose.connect(MONGO_URI, (err) => {
-  if (err) {
+mongoose.connect(MONGO_URI).then(() => {
+  console.log('db Connected');
+}).catch( err => {
     console.log('DB Connection Error: ', err);
-  } else {
-    console.log('db Connected');
-  }
 })
+
+var server = http.createServer(app)
 
 server.listen(PORT, () => {
   console.log(`Server listening on ${PORT}`)
