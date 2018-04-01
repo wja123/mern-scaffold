@@ -6,7 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "webpack --config webpack.config.js",
-    "start": "webpack --config && webpack-dev-server"
+    "start": "webpack-dev-server -d --config webpack.dev.config.js --content-base public/ --progress --colors"
   },
   "author": "William Alagaratnam",
   "license": "ISC",
@@ -19,6 +19,7 @@
     "morgan": "^1.9.0",
     "npm": "^5.8.0",
     "path": "^0.12.7",
+    "react-hot-loader": "^4.0.1",
     "serve-favicon": "^2.5.0"
   },
   "devDependencies": {

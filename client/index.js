@@ -1,10 +1,14 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
+import ToDoList from './views/ToDoList'
+import { hot } from 'react-hot-loader'
+
+console.log('LOADED')
 
 const Root = () => (
   <div>
-    <h1>MERN Scaffold</h1>
+    <ToDoList />
   </div>
 )
 
-ReactDOM.render(<Root />, document.getElementById('root'))
+ReactDOM.render(hot(module)(<Root />), document.getElementById('root'))

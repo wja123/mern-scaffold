@@ -7,6 +7,7 @@ var path = require('path');
 var morgan = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser')
+var ToDo = require('./routes/todo')
 
 const PORT = process.env.PORT || 3000;
 const MONGO_URI = process.env.MONGO_URI || 'mongodb://localhost/merrntodo';
@@ -24,6 +25,7 @@ app.get('/', (req, res) => {
   res.sendFile(path.resolve(__dirname, 'public/index.html'));
 })
 
+app.use('/todo', ToDo)
 
 mongoose.connect(MONGO_URI).then(() => {
   console.log('db Connected');
