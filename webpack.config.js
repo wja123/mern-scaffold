@@ -12,7 +12,7 @@ module.exports = {
   entry: './client/index.js',
   mode: 'development',
   output: {
-    path: path.resolve(__dirname, 'dist'),
+    path: path.resolve(__dirname, 'public'),
     filename: 'index_bundle.js'
   },
   module: {
